@@ -55,9 +55,12 @@ console.log(sayGoodbye('Mary'));
  * Hint 1: The formula for converting celsius to fahrenheit is t*9/5 + 32 where t is the temperature in celsius.
  * Hint 2: There is a very easy way to round numbers in JS. Do a google search to find out how. 
 */
-function temperatureCtoF(/* code here */) {
-  /* code here */
+function temperatureCtoF(cel) {
+  let conversion = (cel * 9 / 5 + 32);
+  return (Math.round(conversion));
 }
+
+console.log(temperatureCtoF(24));
 
 /**
  * ### Challenge `temperatureInF`
@@ -76,9 +79,16 @@ function temperatureCtoF(/* code here */) {
  * 
  * Hint: You can call your `temperatureCtoF` function from inside `temperatureInF`.
 */
-function temperatureInF(/* code here */) {
-  /* code here */
+function temperatureInF(temp, unit) {
+  if (unit === 'C') {
+    return temperatureCtoF(temp) + 'F';
+  }
+  else if (unit === 'F') {
+    return temp + 'F';
+  }
 }
+
+console.log(temperatureInF(24, 'C'));
 
 
 /**
@@ -97,9 +107,16 @@ function temperatureInF(/* code here */) {
  *   email: "leia@leia.com",
  * }
 */
-function makePersonObject(/* code here */) {
-  /* code here */
+function makePersonObject(a, b, c) {
+  const user = {
+    id: a,
+    name: b,
+    email: c,
+  }
+  return user;
 }
+
+console.log(makePersonObject(9, 'Mary', 'mary@email.com'));
 
 /**
  * ### Challenge `getName`
@@ -114,9 +131,12 @@ function makePersonObject(/* code here */) {
  * passing { id: 1, name: 'Leia', email: 'leia@leia.com` } as the argument,
  * the returned value should look like `Hello, my name is Leia`.
 */
-function getName(/* code here */) {
-  /* code here */
+function getName(a) {
+ 
+  return 'Hello, my name is ' + a.name;
 }
+
+//console.log(getName({ id: 1, name: 'Leia', email: 'leia@leia.com'}));
 
 
 /**
@@ -134,10 +154,15 @@ function getName(/* code here */) {
  * passing in [ 'orange', 'grape', 'apple', 'banana', 'mango' ] as the argument,
  * the returned value should be: 2.
 */
-function appleIndex(/* code here */) {
-  /* code here */
+function appleIndex(fruits) {
+ 
+  for(i=0; fruits.length; i++){
+    if (fruits[i] === 'apple'){
+      return i
+    }
+  }
 }
-
+//console.log(appleIndex([ 'orange', 'grape', 'apple', 'banana', 'mango' ]))
 /**
  * ### Challenge `isItAnApple`
  * 
